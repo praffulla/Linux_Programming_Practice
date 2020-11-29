@@ -1,0 +1,28 @@
+
+Producer 1 ith val is 0 : Insert item 1804289383 at pos 0
+ Producer 1 done
+Producer 2 ith val is 0 : Insert item 846930886 at pos 1
+ Producer 2 done
+Consumer 1: Consuming item 1804289383 at pos 0
+Consumer 1: Consuming item 846930886 at pos 1
+Producer 3 ith val is 0 : Insert item 1681692777 at pos 2
+ Producer 3 done
+Producer 2 ith val is 1 : Insert item 1957747793 at pos 0
+ Producer 2 done
+Consumer 2: Consuming item 1681692777 at pos 2
+Producer 3 ith val is 1 : Insert item 719885386 at pos 1
+ Producer 3 done
+Producer 1 ith val is 1 : Insert item 1714636915 at pos 2
+ Producer 1 done
+Consumer 2: Consuming item 1957747793 at pos 0
+Consumer 1: Consuming item 719885386 at pos 1
+Consumer 3: Consuming item 1714636915 at pos 2
+Producer 1 ith val is 2 : Insert item 596516649 at pos 0
+ Producer 1 done
+Consumer 3: Consuming item 596516649 at pos 0
+Producer 3 ith val is 2 : Insert item 1649760492 at pos 1
+ Producer 3 done
+Consumer 3: Consuming item 1649760492 at pos 1
+Producer 2 ith val is 2 : Insert item 424238335 at pos 2
+ Producer 2 done
+Consumer 2: Consuming item 424238335 at pos 2
