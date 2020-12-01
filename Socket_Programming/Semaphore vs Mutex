@@ -1,0 +1,32 @@
+Sempahore has no concept of "ownership". If one process has call P(S) then another process can call V(S) to enter critical section.
+This arises few issues 
+
+1. Accidental release  => Another Procesds can call V(S) and enter critical section. Can be happened by bad coding.
+2. Deadlock through death => Process which acquired sempahore crashed. Now other processes which are waiting for the semaphore signal are blocked.
+                              OS has no way of identifying which process has owned it.
+
+3. Priority inversion   => Happened with Mars Pathfinder. Suppose we have 3 processes with Priority L, M and High in RTOS. Now L and H wants to share
+                            a common buffer so they are synced up with semaphore. So now, L went into CS by sem_wait and H is waiting for the signal.
+                            M came and since it doesn't need CS, it preempts L and does its job. H is still waiting. Now suppose a situation came where
+                            M got stuck, now L can't resume and also H can't resume. Or suppose there are multiple M processes which keep preempt L process,
+                            this also cause L and H to get stuck.
+                            
+                            
+How mutex solved it ?
+
+Mutex has the concept of "ownership". So how it solved all the three issues ?
+1. Deadlock through inversion => Kernel will get to know if a process died and it owns a lock, then it can error out all the other waiting processes or transfer
+                          the ownership to another one.
+
+2. Accidental release => The one which acquired the lock has only released it.
+
+3. Priority Inversion => If L priority process acquires a mutex and H priority is waiting, then L's priority will be increased to H's priority so that
+                          M will not able to preempt L. Now L will do it CS job and release the lock and again drops to original priority.
+                          
+                          
+
+Where to use Binary Semaphore vs mutex ?
+
+If you just want to signal the process, use semaphore. If if you want to protect CS, use mutex.
+
+
