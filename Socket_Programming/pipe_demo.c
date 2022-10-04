@@ -1,3 +1,10 @@
+/*
+    Historically, they have been half duplex (data flows in only one direction). Some systems now provide full-duplex pipes, but for maximum portability, we should never assume that this is the case.
+    Pipes can be used only between processes that have a common ancestor. Normally, a pipe is created by a process, that process calls fork, and the pipe is used between the parent and the child.
+
+*/
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
